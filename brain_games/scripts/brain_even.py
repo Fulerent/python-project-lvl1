@@ -1,5 +1,5 @@
-from logic.logic_brain_even import brain_even
-from logic.hello import hello, get_user_name
+from brain_games.logic_brain_even import brain_even
+from brain_games.hello import hello, get_user_name
 
 def main():
 	print('Answer "yes" if the number is even, otherwise answer "no".')

@@ -15,7 +15,7 @@ def brain_even(name):
 		print('Question: {in_random_nubmer}')
 		resp_user = prompt.string('Your answer: ')
 		
-		if is_even(in_random_nubmer) == resp_user:
+		if is_even(in_random_number) == resp_user:
 			print("Correct!")
 			n += 1
 			
