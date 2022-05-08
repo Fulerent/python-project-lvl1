@@ -1,17 +1,17 @@
 import prompt
 
 
-def hello():
+def _hello():
 	print('Welcome to the Brain Games!')
 
 
-def get_name_user():
+def _get_name_user():
 	name = prompt.string('May I have your name? ')
 	print('Hello, {}!'.format(name))
 	return name
 
 
-def rounds_game(ask_generator, is_correct_result, name):
+def _rounds_game(ask_generator, is_true, name):
     count_win = 0
 
 
@@ -20,7 +20,7 @@ def rounds_game(ask_generator, is_correct_result, name):
         print('Question: {}'.format(ask))
         resp_user = prompt.string('Your answer: ')
 
-        if is_correct_result(ask) == resp_user:
+        if is_true(ask) == resp_user:
                 print("Correct!")
                 count_win += 1
 
@@ -30,9 +30,16 @@ def rounds_game(ask_generator, is_correct_result, name):
         else:
 
             print('"{0}" is wrong answer ;(. Correct answer was "{1}"'.format(
-                resp_user, is_correct_result(ask)))
+                resp_user, is_true(ask)))
             print('Let\'s try again, {}!'.format(name))
             break
+
+
+def start_game(task, generator, validate):
+    _hello()
+    user_name = _get_name_user()
+    print(task)
+    _rounds_game(generator, validate, user_name)
 
 
 
