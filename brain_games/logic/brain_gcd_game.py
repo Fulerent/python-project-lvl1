@@ -3,15 +3,15 @@ from .core_logic import start_game
 
 task = 'Find the greatest common divisor of given numbers.'
 
-def ask_generator():
-    return "{0} {1}".format(random.randint(1, 100), random.randint(1, 100))
+def logic():
+    num1, num2 = random.randint(1, 100), random.randint(1, 100)
+    return "{0} {1}".format(num1, num2), _is_minimal_div(num1, num2)
 
 
-def is_minimal_div(response):
-    num1, num2 = int(response.split(" ")[0]), int(response.split(" ")[1])
+def _is_minimal_div(num1, num2):
     div = num1 // 2 if num1 < num2 else num2 // 2
 
-    for n in range(div, 2, -1):
+    for n in range(div, 1, -1):
         if num1 % n == 0 and num2 % n == 0:
             return str(n)
     else:
@@ -19,5 +19,5 @@ def is_minimal_div(response):
 
     
 def brain_gcd_game():
-    start_game(task, ask_generator, is_minimal_div)
+    start_game(task, logic)
 

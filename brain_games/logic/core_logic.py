@@ -11,16 +11,18 @@ def _get_name_user():
 	return name
 
 
-def _rounds_game(ask_generator, is_true, name):
+def _rounds_game(logic, name):
     count_win = 0
 
 
     while True:
-        ask = ask_generator()
+        #функция logic() возращает кортеж с двумя значениями: ask -> string, resp -> stirng
+        tupl_ask_and_resp = logic()
+        ask, resp = tupl_ask_and_resp[0], tupl_ask_and_resp[1]
         print('Question: {}'.format(ask))
         resp_user = prompt.string('Your answer: ')
 
-        if is_true(ask) == resp_user:
+        if resp_user == resp:
                 print("Correct!")
                 count_win += 1
 
@@ -30,16 +32,16 @@ def _rounds_game(ask_generator, is_true, name):
         else:
 
             print('"{0}" is wrong answer ;(. Correct answer was "{1}"'.format(
-                resp_user, is_true(ask)))
+                resp_user, resp))
             print('Let\'s try again, {}!'.format(name))
             break
 
 
-def start_game(task, generator, validate):
+def start_game(task, logic):
     _hello()
     user_name = _get_name_user()
     print(task)
-    _rounds_game(generator, validate, user_name)
+    _rounds_game(logic, user_name)
 
 
 

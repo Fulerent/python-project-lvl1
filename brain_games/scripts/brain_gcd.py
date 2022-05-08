@@ -1,10 +1,9 @@
 #!/usr/bin/env python
-from brain_games.logic.brain_even_game import brain_even_gcd
+from brain_games.logic.brain_gcd_game import brain_gcd_game
 
 
 def main():
 	pass
 
-
 if __name__ == '__main__':
-    brain_even_gcd()
+    brain_gcd_game()
