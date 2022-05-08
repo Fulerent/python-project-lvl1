@@ -6,13 +6,12 @@ def is_even(num_):
 	return 'yes' if num_ % 2 == 0 else 'no'
 	
 
-def brain_even(name):
-	n = 1
-	user_name = name
+def brain_even(user_name):
+	n = 0
 
-	while n < 4:
+	while True:
 		in_random_number = random.randint(1, 100)
-		print('Question: {in_random_nubmer}')
+		print('Question: {}'.format(in_random_number))
 		resp_user = prompt.string('Your answer: ')
 		
 		if is_even(in_random_number) == resp_user:
@@ -20,10 +19,10 @@ def brain_even(name):
 			n += 1
 			
 			if n == 3:
-				print('Congratulations, {name}')
+				print('Congratulations, {}'.format(user_name))
 				break
 		else:
-			print("{1} is wrong answer ;(. Correct answer was '{2}'".format(is_even(in_random_number), resp_user))
+			print("{0} is wrong answer ;(. Correct answer was '{1}'".format(is_even(in_random_number), resp_user))
 			print('Let\'s try again, {}'.format(user_name))
 			break
 	
