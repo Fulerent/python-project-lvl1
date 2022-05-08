@@ -3,6 +3,7 @@ from .core_logic import start_game
 
 task = 'Find the greatest common divisor of given numbers.'
 
+
 def logic():
     num1, num2 = random.randint(1, 100), random.randint(1, 100)
     return "{0} {1}".format(num1, num2), _is_minimal_div(num1, num2)
@@ -17,7 +18,6 @@ def _is_minimal_div(num1, num2):
     else:
         return str(1)
 
-    
+
 def brain_gcd_game():
     start_game(task, logic)
-
