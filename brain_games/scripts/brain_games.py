@@ -1,10 +1,11 @@
 #!/usr/bin/env python
-from cli import hello
+import prompt
 
 
 def main():
     print('Welcome to the Brain Games!')
-    hello()
+    name = prompt.string('May I have your name?')
+    print('Hello, {}!'.format(name))
 
 
 if __name__ == '__main__':
