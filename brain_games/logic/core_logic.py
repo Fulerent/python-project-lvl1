@@ -26,7 +26,7 @@ def _rounds_game(logic, name):
             count_win += 1
 
             if count_win == 3:
-                print('Congratulations, {}'.format(name))
+                print('Congratulations, {}!'.format(name))
                 break
         else:
             print('"{0}" is wrong answer ;(. Correct answer was "{1}"'.format(
