@@ -11,7 +11,7 @@ def logic():
 
 
 def _is_prime(num_):
-    return all(num_ % x for x in range(2, int(num_**.5+1)))
+    return all(num_ % x for x in range(2, int(num_ ** .5+1)))
 
 
 def brain_prime_game():
