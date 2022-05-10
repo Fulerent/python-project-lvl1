@@ -10,9 +10,7 @@ def logic():
 
 
 def _is_minimal_div(num1, num2):
-    div = num1 // 2 if num1 < num2 else num2 // 2
-
-    for n in range(div, 1, -1):
+    for n in range(min(num1, num2), 1, -1):
         if num1 % n == 0 and num2 % n == 0:
             return str(n)
     else:
