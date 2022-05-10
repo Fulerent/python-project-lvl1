@@ -10,7 +10,7 @@ def logic():
     num2 = random.randint(1, 100)
     result_print = "{0} {1} {2}".format(num1, random_sign, num2)
 
-    return result_print, is_correct_result_exp(num1, random_sign, num1)
+    return result_print, is_correct_result_exp(num1, random_sign, num2)
 
 
 def is_correct_result_exp(num1, sing, num2):
